@@ -1,0 +1,867 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>TP1: Création des interfaces graphiques et navigation - TP-Android-GL4 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creation-des-interfaces-graphiques-et-navigation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TP-Android-GL4 2022-2023" class="md-header__button md-logo" aria-label="TP-Android-GL4 2022-2023" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TP-Android-GL4 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP1: Création des interfaces graphiques et navigation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TP-Android-GL4 2022-2023" class="md-nav__button md-logo" aria-label="TP-Android-GL4 2022-2023" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    TP-Android-GL4 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp0/" class="md-nav__link">
+        TP0: Intitiation au langage Kotlin
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP1: Création des interfaces graphiques et navigation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP1: Création des interfaces graphiques et navigation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-tp" class="md-nav__link">
+    Objectifs du TP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-1" class="md-nav__link">
+    Exercice 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif" class="md-nav__link">
+    Objectif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comportement-dun-edittext" class="md-nav__link">
+    Comportement d’un EditText
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaction-aux-interactions-utilisateur" class="md-nav__link">
+    Réaction aux interactions utilisateur
+  </a>
+  
+    <nav class="md-nav" aria-label="Réaction aux interactions utilisateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methode-1-surcharge-du-listener-du-bouton" class="md-nav__link">
+    Méthode 1: Surcharge du Listener du bouton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methode-2-definition-dune-methode-propre-au-bouton" class="md-nav__link">
+    Mèthode 2: Définition d’une méthode propre au bouton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methode-3-implementation-de-linterface-onclicklistener" class="md-nav__link">
+    Mèthode 3: Implémentation de l’interface OnClickListener
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comportement-dune-checkbox" class="md-nav__link">
+    Comportement d’une CheckBox
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-2-intent-explicite" class="md-nav__link">
+    Exercice 2 : Intent explicite
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 2 : Intent explicite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif_1" class="md-nav__link">
+    Objectif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-3-intent-implicite" class="md-nav__link">
+    Exercice 3 : Intent implicite
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 3 : Intent implicite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif_2" class="md-nav__link">
+    Objectif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-4-travail-a-rendre" class="md-nav__link">
+    Exercice 4 : Travail à rendre
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp2/" class="md-nav__link">
+        TP2: Éléments Graphiques avancés : RecyclerView
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp3/" class="md-nav__link">
+        TP3: Création des Fragments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp4/" class="md-nav__link">
+        TP4: Stockage de données
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp5/" class="md-nav__link">
+        TP5: Firebase
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp6/" class="md-nav__link">
+        TP6: Connexion à des services web REST
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp7/" class="md-nav__link">
+        TP7: MVVM avec Android
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-tp" class="md-nav__link">
+    Objectifs du TP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-1" class="md-nav__link">
+    Exercice 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif" class="md-nav__link">
+    Objectif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comportement-dun-edittext" class="md-nav__link">
+    Comportement d’un EditText
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reaction-aux-interactions-utilisateur" class="md-nav__link">
+    Réaction aux interactions utilisateur
+  </a>
+  
+    <nav class="md-nav" aria-label="Réaction aux interactions utilisateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methode-1-surcharge-du-listener-du-bouton" class="md-nav__link">
+    Méthode 1: Surcharge du Listener du bouton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methode-2-definition-dune-methode-propre-au-bouton" class="md-nav__link">
+    Mèthode 2: Définition d’une méthode propre au bouton
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methode-3-implementation-de-linterface-onclicklistener" class="md-nav__link">
+    Mèthode 3: Implémentation de l’interface OnClickListener
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comportement-dune-checkbox" class="md-nav__link">
+    Comportement d’une CheckBox
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-2-intent-explicite" class="md-nav__link">
+    Exercice 2 : Intent explicite
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 2 : Intent explicite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif_1" class="md-nav__link">
+    Objectif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-3-intent-implicite" class="md-nav__link">
+    Exercice 3 : Intent implicite
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 3 : Intent implicite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif_2" class="md-nav__link">
+    Objectif
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-4-travail-a-rendre" class="md-nav__link">
+    Exercice 4 : Travail à rendre
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="creation-des-interfaces-graphiques-et-navigation">Création des interfaces graphiques et navigation</h1>
+<p><img alt="Screenshot" src="../assets/navigation.jpeg" /></p>
+<h2 id="objectifs-du-tp">Objectifs du TP</h2>
+<ul>
+<li>Dans ce TP nous allons : <ul>
+<li>Découvrir Android Studio.</li>
+<li>Découvrir les ressources, layouts et vues.</li>
+<li>Créer des interfaces graphiques simples.</li>
+<li>Naviguer entre les interfaces à travers les intents.</li>
+</ul>
+</li>
+</ul>
+<h2 id="exercice-1">Exercice 1</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Le but de cet exercice est de construire une interface utilisateur présentant plusieurs composants graphiques Android (View). Cette interface permet de faire une authentification en demandant un couple (email, mot de passe).
+Après appui sur le bouton Connecter, un message indique si le couple donné convient ou pas.</p>
+<p><img alt="Image title" src="../assets/tp1_login.png" /></p>
+<div class="admonition activité-1">
+<p class="admonition-title">Activité-1</p>
+<p>Indiquer les composants graphiques Android qui interviennent dans cette IHM.</p>
+</div>
+<div class="admonition activité-2">
+<p class="admonition-title">Activité-2</p>
+<p>Construire cette IHM avec Android Studio. Lancer l’émulateur, et vérifier que le rendu correspond à ce qui est demandé.</p>
+</div>
+<h3 id="comportement-dun-edittext">Comportement d’un EditText</h3>
+<p>EditText est une sous-classe de TextView qui hérite donc de toutes les fonctions d'un TextView. De plus, cet outil dispose de nouvelles fonctionnalités permettant à l'utilisateur de saisir ou de modifier le texte à des fins diverses. Par conséquent, il est nécessaire de spécificier un type de donnée qui peut accepter via l'attribut android:inputType.
+<img alt="Image title" height="300" src="../assets/edittext.png" /></p>
+<ol>
+<li>Déclarer un EditText dans votre classe MainActivity
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="n">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">txtEmail</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">EditText</span><span class="w"></span>
+</code></pre></div></li>
+<li>Dans la méthode onCreate(), initialiser l’attribut editEmail en lui associant l'element EditText créé dans le main.xml 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="n">txtEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">editTextEmail</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></li>
+<li>Ajouter le code suivant pour avoir la valeur de l'EditText:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">txtEmail</span><span class="p">.</span><span class="na">text</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"></span>
+</code></pre></div></li>
+</ol>
+<h3 id="reaction-aux-interactions-utilisateur">Réaction aux interactions utilisateur</h3>
+<p>Il existe 3 façons pour manipuler le comportement d'un bouton sur Android:</p>
+<h4 id="methode-1-surcharge-du-listener-du-bouton">Méthode 1: Surcharge du Listener du bouton</h4>
+<ol>
+<li>Créer un attribut dans votre activité de type Button :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">btnLogin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Button</span><span class="w"></span>
+</code></pre></div></li>
+<li>Dans la méthode onCreate(), initialiser l’attribut btnLogin en lui associant le bouton créé dans le main.xml 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">btnLogin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">btnLogin</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></li>
+<li>Utiliser le code suivant pour définir le comportement du bouton btnLogin
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">btnLogin</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">            </span><span class="c1">// Do some work here</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+</ol>
+<h4 id="methode-2-definition-dune-methode-propre-au-bouton">Mèthode 2: Définition d’une méthode propre au bouton</h4>
+<ol>
+<li>ajouter l’attribut onClick dans l'element Button dans le fichier xml :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>android:onClick=&quot;login&quot;
+</code></pre></div></li>
+<li>
+<p>Une erreur s'affiche indiquant que vous devez créer la méthode login dans la classe MainActivity
+<img alt="Image title" src="../assets/implement2.png" /></p>
+</li>
+<li>
+<p>Crèer la
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">login</span><span class="p">(</span><span class="n">View</span><span class="w"> </span><span class="n">v</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">// Do some work here</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+</ol>
+<h4 id="methode-3-implementation-de-linterface-onclicklistener">Mèthode 3: Implémentation de l’interface OnClickListener</h4>
+<p>Il est possible d’utiliser l’héritage pour surcharger la méthode onClick, sans passer par l’appel à la méthode setOnClickListener. Il suffit de suivre les étapes suivantes : 
+1.   Votre activity doit implémenter l’interface OnClickListener. Ceci est réalisé comme suit : 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">class</span> <span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">(),</span><span class="w"> </span><span class="n">View</span><span class="p">.</span><span class="na">OnClickListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="p">...</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+1.   Il vous demande alors d'implementer la méthode onClick.
+<img alt="Image title" src="../assets/onclick.png" /></p>
+<ol>
+<li>Cliquer sur " implement members " et suiver les étapes.
+<img alt="Image title" height="300" src="../assets/implement1.png" width="300," /></li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Cette méthode sera commune à tous les éléments cliquables, il faut donc distinguer le comportement selon l‘identifiant de l‘élément cliqué.</p>
+</div>
+<ol>
+<li>Ajouter le code suivant : 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">view</span><span class="o">?</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">btnLogin</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">            </span><span class="c1">// do some work</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+</code></pre></div></li>
+</ol>
+<div class="admonition activité-3">
+<p class="admonition-title">Activité-3</p>
+<p>Ecrire le code Kotlin qui, lorsque le bouton Connecter est actionné par l'utilisateur, une vérification d'authentification est faite et un message affiche le résultat (bon couple login, mot de passe ou pas).
+Pour simplifier, on considère que le couple (gl4@insat.tn/insat2022) est correct.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Pour afficher le message, utiliser un <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts">Toast</a>.</p>
+</div>
+<h3 id="comportement-dune-checkbox">Comportement d’une CheckBox</h3>
+<p>La CheckBox est un bouton avec deux états checked (cochés) et unchecked (non cochés), c'est un composant de base et est très souvent utilisé dans les applications Android.
+<img alt="Image title" height="300" src="../assets/checkbox.png" /></p>
+<p>Par défaut, la CheckBox a un état unchecked, vous pouvez changer son état via la propriété android:checked.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;CheckBox</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="na">android:id=</span><span class="s">&quot;@+id/someId&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="na">android:checked=</span><span class="s">&quot;true&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="err">...</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+Quelques propriétés importantes de CheckBox:
+<img alt="Image title" height="300" src="../assets/checklist.png" /></p>
+<h2 id="exercice-2-intent-explicite">Exercice 2 : Intent explicite</h2>
+<h3 id="objectif_1">Objectif</h3>
+<p>Nous allons modifier le code crée dans l'exercice 1 de telle sorte que lorsqu'on clique sur le bouton, une nouvelle Activité affichant un message de Bienvenue s'ouvre. Nous allons donc utiliser un intent explicite
+    <img alt="Image title" height="300" src="../assets/tp1_implicite.png" /></p>
+<ol>
+<li>Créer une Nouvelle Activity "WelcomeActivity"
+    <img alt="Image title" height="300" src="../assets/activity.png" />
+    --------
+    <img alt="Image title" height="300" src="../assets/welcomeAct.png" /></li>
+<li>
+<p>Modifier le code dans la méthode onClick pour créer un Intent
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="n">val</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">view</span><span class="p">.</span><span class="na">context</span><span class="p">,</span><span class="n">WelcomeActivity</span><span class="p">::</span><span class="kd">class</span><span class="err">.</span><span class="nc">java</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Pour passer des paramétres à la deuxième Activité, on utilise la méthode putExtra() qui prend en paramètres le nom du variable à stoquer dans l'intent et sa valeur : 
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">&quot;email&quot;</span><span class="p">,</span><span class="n">email</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+</li>
+<li>Lancer la deuxième Activité
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></li>
+<li>Dans l'Activité WelcomeActivity ajouter le code suivant pour récupérer la valeur de l'email.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">val</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">&quot;email&quot;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></li>
+<li>Ajouter un TextView dans le ficher xml, lui attribuer un id et l'initialiser comme on a fait dans l'exercice 1.</li>
+<li>Afficher le message de Bienvenue.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">txtWelcome</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bienvenue $email&quot;</span><span class="w"></span>
+</code></pre></div></li>
+</ol>
+<h2 id="exercice-3-intent-implicite">Exercice 3 : Intent implicite</h2>
+<h3 id="objectif_2">Objectif</h3>
+<p>Nous allons créer une application qui ouvre la galerie de photo pour choisir une image et l’afficher
+<img alt="Image title" height="300" src="../assets/intentimplicite.png" /></p>
+<div class="admonition activité-1">
+<p class="admonition-title">Activité-1</p>
+<p>Construire cette IHM avec Android Studio. Lancer l’émulateur, et vérifier que le rendu correspond à ce qui est demandé.</p>
+</div>
+<h2 id="exercice-4-travail-a-rendre">Exercice 4 : Travail à rendre</h2>
+<p>Votre premier travail sera divisé en 2 parties :
+En premier lieu, vous allez découvrir le material design, le célèbre langage visuel défini par Google. Commencer par consulter sa documentation officielle <a href="https://material.io/develop/android">ici</a>.</p>
+<p>Lire attentivement les différentes recommandations et bonnes pratiques dictées par Google pour la conception d’interfaces graphiques.</p>
+<p>En deuxième lieu, vous allez appliquer ce patron et les notions vues dans ce TP sur une simple application de commande de pizza dans un restaurant.</p>
+<p>L'application aura une interface principale, où l'utilisateur doit introduire son nom, prénom et son adresse, choisir le type de pizza qu'il veut commander (Moyenne, Mini, Maxi) et les ingrédients à ajouter (Fromage, champignon, etc.). L'application doit lui permettre ensuite d'envoyer un SMS (ou un email) au vendeur, contenant un récapitulatif de la commande. Ajouter ensuite une interface d'accueil (Splash Screen) qui s'affiche pendant 5 secondes puis redirige l'utilisateur à l'interface principale.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../tp0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TP0: Intitiation au langage Kotlin" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              TP0: Intitiation au langage Kotlin
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../tp2/" class="md-footer__link md-footer__link--next" aria-label="Next: TP2: Éléments Graphiques avancés : RecyclerView" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TP2: Éléments Graphiques avancés : RecyclerView
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>

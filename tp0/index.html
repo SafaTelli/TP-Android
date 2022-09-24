@@ -1,0 +1,1116 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+    
+    
+      
+        <title>TP0: Intitiation au langage Kotlin - TP-Android-GL4 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#initiation-au-langage-kotlin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TP-Android-GL4 2022-2023" class="md-header__button md-logo" aria-label="TP-Android-GL4 2022-2023" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TP-Android-GL4 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP0: Intitiation au langage Kotlin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TP-Android-GL4 2022-2023" class="md-nav__button md-logo" aria-label="TP-Android-GL4 2022-2023" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    TP-Android-GL4 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP0: Intitiation au langage Kotlin
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TP0: Intitiation au langage Kotlin
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-tp" class="md-nav__link">
+    Objectifs du TP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langage-kotlin" class="md-nav__link">
+    Langage Kotlin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#premiere-application-kotlin" class="md-nav__link">
+    Première application kotlin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-variables" class="md-nav__link">
+    Les variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Les variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-types-nullables" class="md-nav__link">
+    Les types nullables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-operateur" class="md-nav__link">
+    L' opérateur !!.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-operateur-elvis" class="md-nav__link">
+    L' opérateur elvis ?:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-mot-cle-lateinit" class="md-nav__link">
+    Le mot clé lateinit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-symbole" class="md-nav__link">
+    Le symbole $
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-fonctions" class="md-nav__link">
+    Les fonctions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-boucles" class="md-nav__link">
+    Les boucles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-listes" class="md-nav__link">
+    Les listes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-choix-et-les-conditions" class="md-nav__link">
+    Les choix et les conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Les choix et les conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    if ... else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selon" class="md-nav__link">
+    selon ...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-classes" class="md-nav__link">
+    Les classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Les classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lheritage" class="md-nav__link">
+    L'heritage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-constructeurs-multiples" class="md-nav__link">
+    Les constructeurs multiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-classes-de-donnees" class="md-nav__link">
+    Les classes de données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-types" class="md-nav__link">
+    Function types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-comme-parametres-lambda-expressions" class="md-nav__link">
+    Fonctions comme paramètres, lambda-expressions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp1/" class="md-nav__link">
+        TP1: Création des interfaces graphiques et navigation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp2/" class="md-nav__link">
+        TP2: Éléments Graphiques avancés : RecyclerView
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp3/" class="md-nav__link">
+        TP3: Création des Fragments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp4/" class="md-nav__link">
+        TP4: Stockage de données
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp5/" class="md-nav__link">
+        TP5: Firebase
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp6/" class="md-nav__link">
+        TP6: Connexion à des services web REST
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp7/" class="md-nav__link">
+        TP7: MVVM avec Android
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-tp" class="md-nav__link">
+    Objectifs du TP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langage-kotlin" class="md-nav__link">
+    Langage Kotlin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#premiere-application-kotlin" class="md-nav__link">
+    Première application kotlin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-variables" class="md-nav__link">
+    Les variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Les variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-types-nullables" class="md-nav__link">
+    Les types nullables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-operateur" class="md-nav__link">
+    L' opérateur !!.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-operateur-elvis" class="md-nav__link">
+    L' opérateur elvis ?:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-mot-cle-lateinit" class="md-nav__link">
+    Le mot clé lateinit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-symbole" class="md-nav__link">
+    Le symbole $
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-fonctions" class="md-nav__link">
+    Les fonctions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-boucles" class="md-nav__link">
+    Les boucles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-listes" class="md-nav__link">
+    Les listes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-choix-et-les-conditions" class="md-nav__link">
+    Les choix et les conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Les choix et les conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else" class="md-nav__link">
+    if ... else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selon" class="md-nav__link">
+    selon ...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-classes" class="md-nav__link">
+    Les classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Les classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lheritage" class="md-nav__link">
+    L'heritage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-constructeurs-multiples" class="md-nav__link">
+    Les constructeurs multiples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-classes-de-donnees" class="md-nav__link">
+    Les classes de données
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-types" class="md-nav__link">
+    Function types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-comme-parametres-lambda-expressions" class="md-nav__link">
+    Fonctions comme paramètres, lambda-expressions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="initiation-au-langage-kotlin">Initiation au langage Kotlin</h1>
+<p><img alt="Screenshot" src="../assets/kotlin.png" /></p>
+<h2 id="objectifs-du-tp">Objectifs du TP</h2>
+<ul>
+<li>Dans ce TP nous allons se familiariser avec le langage kotlin</li>
+</ul>
+<h2 id="langage-kotlin">Langage Kotlin</h2>
+<ul>
+<li>
+<p>Kotlin a été développé par JetBrains dans l’objectif de pallier les limitations qu’imposait Java dans le développement de ses différents produits.</p>
+</li>
+<li>
+<p>Kotlin est un langage de programmation "statiquement typé" supportant néanmoins "l’inférence de type" grâce à son compilateur.</p>
+</li>
+<li>
+<p>Kotlin supporte la "programmation orientée objet" et la "programmation fonctionnelle".</p>
+</li>
+<li>
+<p>Kotlin est open source, supporte la plupart des IDE et fonctionne sur la majorité des plateformes Java actuelles (où le bytecode JVM est accepté)</p>
+</li>
+<li>
+<p>En 2017, Google a annoncé lors de sa conférence Google I/O, que kotlin est désormais son langage préféré pour les développeurs d'applications Android.</p>
+</li>
+</ul>
+<h2 id="premiere-application-kotlin">Première application kotlin</h2>
+<ol>
+<li>Lancer AndroidStudio</li>
+<li>File -&gt; New -&gt; New Project</li>
+<li>
+<p>Sélectionner "No Activity" (pour une application sur le terminal)
+<img alt="Image title" height="300" src="../assets/noactivity.png" /></p>
+</li>
+<li>
+<p>Choisir le nom du projet (ici Hello)</p>
+</li>
+<li>Le nom de package (ici com.gl4.tp)</li>
+<li>Le répertoire du projet</li>
+<li>
+<p>Langage (Kotlin)</p>
+</li>
+<li>
+<p>File -&gt; New -&gt;Kotlin Class/File pour ajouter le fichier source
+<img alt="Image title" height="200" src="../assets/newfile2.png" /></p>
+</li>
+<li>
+<p>Choisir le nom du fichier (Hello.kt)
+<img alt="Image title" height="200" src="../assets/newfile1.png" /></p>
+</li>
+<li>
+<p>Le programme doit contenir fonction main suivante :</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">)){</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+11. Exécuter le programme en choisisant : Run 'HelloKt'
+<img alt="Image title" height="200" src="../assets/run.png" />
+Voici le résultat :
+<img alt="Image title" height="200" src="../assets/resultats.png" /></p>
+<h2 id="les-variables">Les variables</h2>
+<p><img alt="Image title" height="200" src="../assets/tp0/variables.png" /></p>
+<p>La mention du type d'une variable n'est pas obligatoire en Kotlin. Le compilateur de Kotlin possède une fonctionnalité appelée "l’inférence de type", ou "type inference", en anglais. Pour que cela soit plus parlant, comprenez par "inférence" la notion de "déduction" ! . Kotlin se voulant être un langage très intelligent, ses développeurs ont souhaité lui offrir les avantages de lisibilité des langages "dynamiquement typés", mais sans leurs inconvénients. En effet, pour Kotlin, ce sera au moment de la compilation (et non au moment de l’exécution) que les types de vos variables seront automatiquement déduit.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">val</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mohamed&quot;</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">val</span><span class="w"> </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">val</span><span class="w"> </span><span class="n">isDeveloper</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div>
+Equivaut à :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">val</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mohamed&quot;</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">val</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">val</span><span class="w"> </span><span class="n">isDeveloper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div>
+<h3 id="les-types-nullables">Les types nullables</h3>
+<p>Kotlin est un langage dit "sûr". Derrière cet adjectif réconfortant se cache en réalité un ensemble de fonctionnalités améliorant la sûreté du langage, dont la fameuse "<strong>Null Safety</strong>".
+<img alt="Image title" height="200" src="../assets/tp0/nullsafety.png" /></p>
+<p>Exemple concret : Copier le code suivant dans fonction main() crée au départ : 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="o">?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;My message can possibly be null !&quot;</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">message</span><span class="p">.</span><span class="na">upperCase</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+Comme vous le voyez sur l’exemple ci-dessus, nous avons déclaré la variable  message  comme pouvant "possiblement" contenir une valeur nulle. Puis, lorsque nous souhaitons ensuite accéder à sa méthode  upperCase() , le compilateur Kotlin nous souligne en rouge le point précédant cette méthode pour nous dire que cela est impossible, car la variable peut être possiblement nulle.
+<img alt="Image title" height="200,width" src="../assets/tp0/null.png" /></p>
+<p>Pour gérer une variable possiblement nulle il faut utiliser le point d’interrogation afin d’appeler une de ses méthodes de manière sécurisée. Dès lors, si jamais la variable est égale à nulle, la méthode ne sera tout simplement pas appelée ! En revanche, si la variable contient bien une valeur, alors la méthode sera appelée et exécutée.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="o">?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;My message can possibly be null !&quot;</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">message</span><span class="p">.</span><span class="na">upperCase</span><span class="p">()</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="l-operateur">L' opérateur !!.</h3>
+<p>l'opérateur d'assertion non nul (!!) convertit toute valeur en un type non nul et lève une exception si la valeur est nulle. Vous pouvez écrire x!!, et cela renverra une valeur non nulle de x (par exemple, une chaîne) ou lancera un NullPointerException si x est null :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">val</span><span class="w"> </span><span class="n">ville</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personnel</span><span class="o">[</span><span class="n">i</span><span class="o">]!!</span><span class="p">.</span><span class="na">adresse</span><span class="o">!!</span><span class="p">.</span><span class="na">city</span><span class="w"></span>
+</code></pre></div>
+//si personnel[i] ou adresse est égale à null alors NullPointerException, par contre city peut être null</p>
+<h3 id="l-operateur-elvis">L' opérateur elvis ?:</h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">savedInstanceState</span><span class="o">?</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+</code></pre></div>
+Si la valeur de savedInstanceState?.getInt("key") est un Int alors s prendra cette valeur, si
+la valeur de cette expression est null alors s prendra la valeur 0</p>
+<h3 id="le-mot-cle-lateinit">Le mot clé lateinit</h3>
+<p>Imaginez que vous ne souhaitiez pas initialiser votre variable immédiatement après sa déclaration, mais le faire un peu plus tard dans votre code (quand par exemple une page ou un écran a terminé de charger).
+Vous allez tout simplement utiliser le mot-clé  <strong><em>lateinit</em></strong> (pour "Late-Initialized") permettant d’indiquer à Kotlin que vous êtes sûr et certain d’initialiser la variable en question, un peu plus tard dans votre code :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">private</span><span class="w"> </span><span class="n">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">submitButton</span><span class="p">:</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span>
+</code></pre></div></p>
+<h3 id="le-symbole">Le symbole $</h3>
+<p>Kotlin nous permet de manipuler un peu plus simplement les variables de type  String  . Nous allons pouvoir, par exemple, utiliser le symbole  $  afin de faire référence à une variable locale directement à l’intérieur d’un autre  String  :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">val</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mohamed&quot;</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">print</span><span class="p">(</span><span class="s">&quot;Hello $name&quot;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<div class="admonition activité">
+<p class="admonition-title">Activité<p>Copier le code suivant et le corriger :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">        </span><span class="n">val</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">        </span><span class="n">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello world!&quot;</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">toto</span><span class="p">:</span><span class="n">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Toto&quot;</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="n">toto</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="o">?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;I’m learning Kotlin!&quot;</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="nf">println</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="na">toString</span><span class="p">())</span><span class="w">      </span>
+</code></pre></div>
+</p>
+</div>
+<h2 id="les-fonctions">Les fonctions</h2>
+<p><img alt="Image title" height="200,width" src="../assets/tp0/func.png" /></p>
+<p><img alt="Image title" height="200,width" src="../assets/tp0/fun2.png" /></p>
+<div class="admonition activité">
+<p class="admonition-title">Activité<p>Ecrire une fonction qui prend 2 valeurs en paramètres et retourne leurs somme.</p>
+<p>Corriger cette fonction:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">sayMyName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="s">&quot; $name &quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w">          </span>
+</code></pre></div>
+ Simplifier cette fonction:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">():</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">}</span><span class="w">        </span>
+</code></pre></div>
+</p>
+</div>
+<h2 id="les-boucles">Les boucles</h2>
+<p><img alt="Image title" height="200,width" src="../assets/tp0/boucles.png" /></p>
+<h2 id="les-listes">Les listes</h2>
+<p>En Kotlin, vous aurez la possibilité de créer très facilement des listes de valeurs afin de lier différentes données entre elles.
+Nous allons ainsi pouvoir appeler les méthodes génériques suivantes :</p>
+<ul>
+<li>
+<p><strong><em>listOf</em></strong>  : Permet de créer une liste d’éléments ordonnée et immuable.</p>
+</li>
+<li>
+<p><strong><em>mutableListOf</em></strong>  : Permet de créer une liste d’éléments ordonnée et muable.</p>
+</li>
+<li>
+<p><strong><em>setOf</em></strong>  : Permet de créer une liste d’éléments désordonnée et immuable.</p>
+</li>
+<li>
+<p><strong><em>mutableSetOf</em></strong>  : Permet de créer une liste d’éléments désordonnée et muable.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w"> </span><span class="c1">// listOf</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">val</span><span class="w"> </span><span class="n">listOfNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="s">&quot;Jake Wharton&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joe Birch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Robert Martin&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">listOfNames</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="c1">// =&gt; Jake Wharton</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">listOfNames</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mathieu Nebra&quot;</span><span class="w"> </span><span class="c1">// =&gt; ERROR ! List is immutable</span><span class="w"></span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">// mutableListOf</span><span class="w"></span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">val</span><span class="w"> </span><span class="n">listOfNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="p">(</span><span class="s">&quot;Jake Wharton&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joe Birch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Robert Martin&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">listOfNames</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="c1">// =&gt; Jake Wharton</span><span class="w"></span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">listOfNames</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Mathieu Nebra&quot;</span><span class="w"> </span><span class="c1">// =&gt; SUCCESS !</span><span class="w"></span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="c1">// setOf</span><span class="w"></span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">val</span><span class="w"> </span><span class="n">setOfNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setOf</span><span class="p">(</span><span class="s">&quot;Jake Wharton&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joe Birch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Robert Martin&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="n">listOfNames</span><span class="p">.</span><span class="na">first</span><span class="p">()</span><span class="w"> </span><span class="c1">// =&gt; Jake Wharton</span><span class="w"></span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="n">listOfNames</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Mathieu Nebra&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// =&gt; ERROR ! Set is immutable</span><span class="w"></span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="c1">// mutableSetOf</span><span class="w"></span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="n">val</span><span class="w"> </span><span class="n">setOfNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableSetOf</span><span class="p">(</span><span class="s">&quot;Jake Wharton&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joe Birch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Robert Martin&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="n">listOfNames</span><span class="p">.</span><span class="na">first</span><span class="p">()</span><span class="w"> </span><span class="c1">// =&gt; Jake Wharton</span><span class="w"></span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="n">listOfNames</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Mathieu Nebra&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// =&gt; SUCCESS !    </span><span class="w"></span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Sachez également qu’il existe d’autres méthodes comme <strong><em>arrayOf</em></strong> pour créer un tableau de valeurs, et même  <strong><em>mapOf</em></strong>  pour créer un dictionnaire de valeurs.</p>
+</div>
+<div class="admonition activité">
+<p class="admonition-title">Activité<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">showList</span><span class="p">(</span><span class="n">list</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="c1">// Complétez la fonction pour afficher les éléments de la liste</span><span class="w"></span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="p">}</span><span class="w">      </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">  </span><span class="n">fun</span><span class="w"> </span><span class="nf">oddNumbersTo10</span><span class="p">(){</span><span class="w"></span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">        </span><span class="c1">// Complétez la fonction pour afficher les nombres impairs jusqu&#39;à 10</span><span class="w"></span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="p">}</span><span class="w">       </span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="n">languages</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="c1">// Créez une liste ordonnée de plusieurs languages de programation</span><span class="w"></span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span><span class="w"> </span><span class="n">Array</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Languages :&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="n">showList</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Odd Numbers to 10 :&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="n">oddNumbersTo10</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p">}</span><span class="w">      </span>
+</code></pre></div>
+</p>
+</div>
+<h2 id="les-choix-et-les-conditions">Les choix et les conditions</h2>
+<h3 id="if-else">if ... else</h3>
+<p>Toutes les structures de contrôle (à l’exception des boucles) sont des <strong><em>expressions</em></strong>, et pourront donc renvoyer une valeur. D’ailleurs, en Kotlin, l’opérateur ternaire n’existe plus : on préférera utiliser une condition if/else.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="w"></span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">val</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">                </span><span class="n">a</span><span class="o">++</span><span class="w"></span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">                </span><span class="n">a</span><span class="w"></span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">                </span><span class="n">b</span><span class="o">++</span><span class="w"></span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">                </span><span class="n">b</span><span class="w"></span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Result is : $result&quot;</span><span class="p">)</span><span class="w">       </span>
+</code></pre></div>
+<h3 id="selon">selon ...</h3>
+<p>La fameuse switch de Java, existe en kotlin mais avec une autre identité. Oubliez <strong><em>switch</em></strong> et utilisez à la place le mot-clé  <strong><em>when</em></strong>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">val</span><span class="w"> </span><span class="n">number</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">when</span><span class="p">(</span><span class="n">number</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="mi">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Un&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">        </span><span class="mi">2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Deux&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="mi">3</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Trois&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Inconnu&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="p">}</span><span class="w">      </span>
+</code></pre></div></p>
+<div class="admonition activité">
+<p class="admonition-title">Activité</p>
+<p>Créer une fonction qui prend en paramètres deux entiers et un opérateur ( +, -, /,*, %) et renvoit le résultat de l'opération.
+Tester la fonction. </p>
+</div>
+<h2 id="les-classes">Les classes</h2>
+<p><img alt="Image title" height="200,width" src="../assets/tp0/class.png" /></p>
+<p>En Kotlin, la visibilité par défaut de n’importe quel élément de votre code (variables, fonctions, classes, etc.) est  public . Il existe 4 principaux modificateurs de visibilité pour les membres (variables, fonctions, etc.) d’une classe :</p>
+<ul>
+<li>
+<p>private  : Un membre déclaré comme  private  sera visible uniquement dans la classe où il est déclaré.</p>
+</li>
+<li>
+<p>protected  : Un membre déclaré comme  protected  sera visible uniquement dans la classe où il est déclaré ET dans ses sous-classes (via l’héritage).</p>
+</li>
+<li>
+<p>internal : Un membre déclaré comme  internal  sera visible par tous ceux du même module. Un module est un ensemble de fichiers compilés ensemble (comme une librairie Gradle ou Maven, par exemple).</p>
+</li>
+<li>
+<p>public  : Un membre déclaré comme  public  sera visible partout et par tout le monde.</p>
+</li>
+</ul>
+<p>Pour pouvoir personnaliser un getter() ou un setter() en kotlin, il faut utiliser les mots clés get()  et  set() dans le corps de la classe. Exemple : 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">class</span> <span class="nf">User</span><span class="p">(</span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">password</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="w"></span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">        </span><span class="nf">get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">            </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;User is getting his email.&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">field</span><span class="w"> </span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="n">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">            </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;User is setting his email&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">            </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="p">}</span><span class="w">      </span>
+</code></pre></div></p>
+<p>Si nous souhaitons définir la propriété  password  comme étant privée, nous pouvons le faire en rajoutant le mot-clé  <strong><em>private</em></strong>  devant sa déclaration :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">class</span> <span class="nf">User</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="kd">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">passwird</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">)</span><span class="w">     </span>
+</code></pre></div></p>
+<h3 id="lheritage">L'heritage</h3>
+<p>en Kotlin, toutes les classes et leurs méthodes sont "fermées" par défaut. Vous ne pourrez donc pas hériter d’une classe ou redéfinir ses méthodes sans l’autorisation explicite.
+Ainsi, il faut indiquer explicitement, avec au mot-clé  <strong><em>open</em></strong>  , si une classe ou une méthode peut être "ouverte" à l’héritage.</p>
+<p>Les modificateurs d’accès disponibles en Kotlin (à ne pas confondre avec les modificateurs de visibilité!) :</p>
+<ul>
+<li>
+<p><strong><em>final</em></strong> : Classe/Méthode/Propriété ne pouvant pas être redéfinie. C’est l’état par défaut de tous les éléments en Kotlin.</p>
+</li>
+<li>
+<p><strong><em>open</em></strong>  : Classe/Méthode/Propriété pouvant être redéfinie. Ce modificateur d’accès doit être indiqué explicitement.</p>
+</li>
+<li>
+<p><strong><em>abstract</em></strong>  : Classe/Méthode/Propriété devant être redéfinie. Ce modificateur d’accès peut être utilisé uniquement dans des classes abstraites.</p>
+</li>
+</ul>
+<p>Et bien entendu, le mot-clé  <strong><em>override</em></strong>  sera utilisé pour redéfinir un élément d’une classe parente (ou d’une interface).</p>
+<p><img alt="Image title" height="200,width" src="../assets/tp0/heritage.png" /></p>
+<h3 id="les-constructeurs-multiples">Les constructeurs multiples</h3>
+<p>Pour créer un second constructeur, il faut utiliser le mot clé <strong><em>constructor</em></strong>
+<img alt="Image title" height="200,width" src="../assets/tp0/constructor.png" /></p>
+<h3 id="les-classes-de-donnees">Les classes de données</h3>
+<p>En Kotlin, nous pouvons définir une classe comme étant destinée à contenir des modèles de données grâce au mot-clé  <strong><em>data</em></strong>  :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">data</span><span class="w"> </span><span class="kd">class</span> <span class="nf">User</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">password</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="n">isConnected</span><span class="p">:</span><span class="w"> </span><span class="n">Boolean</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+Grâce à ce simple mot-clé, le compilateur Kotlin implémentera pour nous les principales méthodes utilisées pour "comparer" et "décrire" un objet contenant des données comme les méthodes  <strong><em>toString()</em></strong>  ,  <strong><em>hashCode()</em></strong>  , <strong><em>equals()</em></strong>  ou encore  <strong><em>copy()</em></strong>.</p>
+<h2 id="function-types">Function types</h2>
+<p>Il est possible d'avoir les variables de type fonction (quicontiennent une référence vers une fonction) et il est possible
+de passer une fonction comme paramètre d'une autre fonction.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">fun</span><span class="w"> </span><span class="nf">appl</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">          </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="n">Int</span><span class="p">,</span><span class="n">Int</span><span class="p">)</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MutableList</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mutableListOf</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="n">val</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">size</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">size</span><span class="w"></span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="nf">for</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="mf">0.</span><span class="p">.</span><span class="na">s</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">        </span><span class="n">r</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+appl() prend comme paramètres deux listes de Int et le troisième paramètre <strong><em>f: (Int,Int)-&gt; Int</em></strong> est une fonction qui prend deux Int et retourne un Int. La fonction appl() construit une nouvelle liste obtenue en appliquant f aux couples correspondants de listes a et b.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">fun</span><span class="w"> </span><span class="nf">fu</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="o">*</span><span class="n">j</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">val</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">val</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="p">(</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1">//passer une fonction en paramètre</span><span class="w"></span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="n">val</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">appl</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="p">::</span><span class="n">fu</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1">//le nom de fonction précédé par :: ou par NomClasse:: si la fonction est définie dans une classe</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="fonctions-comme-parametres-lambda-expressions">Fonctions comme paramètres, lambda-expressions</h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">val</span><span class="w"> </span><span class="n">res2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">appl</span><span class="p">(</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="w"> </span><span class="p">})</span><span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+C'est une lambda expression qui désigne une fonction sans nom avec les arguments a, b. Le compilateur déduit le type de paramètres de la définition de appl().</p>
+<p>Lambda expression avec le type de paramètres :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="w"></span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+La valeur de lambda expression est la dernière valeur calculée dans le corps de la fonction.</p>
+<p>Si lambda expression est le dernier argument d'une fonction alors on peut la
+mettre en dehors des parenthèses.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">val</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">val</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="p">(</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">val</span><span class="w"> </span><span class="n">res2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">appl</span><span class="p">(</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../tp1/" class="md-footer__link md-footer__link--next" aria-label="Next: TP1: Création des interfaces graphiques et navigation" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TP1: Création des interfaces graphiques et navigation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>
