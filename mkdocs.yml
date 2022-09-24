@@ -1,0 +1,33 @@
+site_name: TP-Android-GL4 2022-2023
+theme:
+    name: material
+    locale: fr
+    static_templates:
+        - sitemap.html
+    include_sidebar: true
+    palette:
+      primary: green
+    logo: assets/logo.png
+nav:
+    - Introduction: 'index.md'
+    - 'TP0: Intitiation au langage Kotlin': 'tp0.md'
+    - 'TP1: Création des interfaces graphiques et navigation': 'tp1.md'
+    - 'TP2: Éléments Graphiques avancés : RecyclerView': 'tp2.md'
+    - 'TP3: Création des Fragments': 'tp3.md'
+    - 'TP4: Stockage de données': 'tp4.md'
+    - 'TP5: Firebase': 'tp5.md'
+    - 'TP6: Connexion à des services web REST': 'tp6.md'
+    - 'TP7: MVVM avec Android' : 'tp7.md'
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - def_list
+
