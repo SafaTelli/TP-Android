@@ -1,4 +1,5 @@
 site_name: TP-Android-GL4 2022-2023
+copyright : Safa Telli
 theme:
     name: material
     locale: fr
