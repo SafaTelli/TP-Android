@@ -386,6 +386,7 @@ val p = listOf<Int>( -1, 7, 90, 14)
 val res2 = appl( p, q ) {a , b -> (a-b)*(a-b) }
 ```
 
+## Travail à rendre 
 !!! Exercice
     1. Dans Android Studio, créez l’application TP01. Suivez les instructions données dans ce TP pour créer une application à exécuter sur un terminal.
     2. ***Hello***
