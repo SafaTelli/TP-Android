@@ -1,5 +1,6 @@
 site_name: TP-Android-GL4 2022-2023
 copyright : Safa Telli
+
 theme:
     name: material
     locale: fr
@@ -9,6 +10,7 @@ theme:
     palette:
       primary: green
     logo: assets/logo.png
+    favicon: assets/logo.png
 nav:
     - Introduction: 'index.md'
     - 'TP0: Intitiation au langage Kotlin': 'tp0.md'
