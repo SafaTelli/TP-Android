@@ -716,7 +716,7 @@
 <p><img alt="Screenshot" src="../assets/kotlin.png" /></p>
 <h2 id="objectifs-du-tp">Objectifs du TP</h2>
 <ul>
-<li>Dans ce TP nous allons se familiariser avec le langage kotlin</li>
+<li>Dans ce TP nous allons nous familiariser avec le langage kotlin</li>
 </ul>
 <h2 id="langage-kotlin">Langage Kotlin</h2>
 <ul>
@@ -1035,6 +1035,38 @@ mettre en dehors des parenthèses.</p>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">val</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="p">(</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">)</span><span class="w"></span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">val</span><span class="w"> </span><span class="n">res2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">appl</span><span class="p">(</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<div class="admonition exercice">
+<p class="admonition-title">Exercice</p>
+<ol>
+<li>Dans Android Studio, créez l’application TP01. Suivez les instructions données dans ce TP pour créer une application à exécuter sur un terminal.</li>
+<li>
+<p><strong><em>Hello</em></strong></p>
+<p>Pour voir si votre application est correctement générée dans AndroidStudio mettre dans la fonction
+main() l’affichage de "Hello" et tester si votre programme s’exécute correctement.</p>
+</li>
+<li>
+<p><strong><em>classe Point</em></strong></p>
+<p>Définir la classe Point qui correspond à un point sur le, plan avec les coordonnées entières x et y.
+La classe Point sera déclaré comme data class.</p>
+</li>
+<li>
+<p><strong><em>distance</em></strong></p>
+<p>Écrire la fonction distance qui prend comme argument deux points et calcule la distance entre
+eux. On suppose que la distance entre les point p et q est |p.x − q.x| + |p.y − q.y| (donc c’est un Int)..</p>
+</li>
+<li>
+<p><strong><em>classe Rectangle</em></strong></p>
+<p>La classe Rectangle représente un rectangle sur le plan dont les sommets ont les coordonnées entières. Un tel rectangle est définie de faço,n unique par deux de ses sommets, le sommet p en bas à gauche et q en haut à droite.</p>
+<ul>
+<li>Écrire la classe Rectangle avec un constructeur qui prend comme paramètres les points p et q. Les valeurs par défaut pour les deux points sont respectivement (0, 0) et (1, 1).</li>
+<li>Redéfinir la méthode toString() de Rectangle pour qu’elle retourne "p=$p q=$q".</li>
+<li>Définir dans main() un Array composée de plusieurs rectangles. Pour définir les rectangles utilisez aussi les valeurs par défaut (un rectangles avec p et q par défaut, un rectangle avec la valeur p par défaut et q défini à la création de rectangle, un rectangle avec la valeur q par défaut et p défini à la création de rectangle, etc.)</li>
+<li>Dans la classe Rectangle ajouter la méthode surface qui retourne la surface de rectangle.</li>
+<li>Dans main afficher la surface de chaque rectangle qui est dans le tableau défini précédemment.</li>
+</ul>
+</li>
+</ol>
+</div>
 
 
 
