@@ -3,7 +3,7 @@
 ![Screenshot](assets/kotlin.png)
 
 ## Objectifs du TP
-- Dans ce TP nous allons se familiariser avec le langage kotlin
+- Dans ce TP nous allons nous familiariser avec le langage kotlin
 
 ## Langage Kotlin
 - Kotlin a été développé par JetBrains dans l’objectif de pallier les limitations qu’imposait Java dans le développement de ses différents produits.
@@ -386,4 +386,28 @@ val p = listOf<Int>( -1, 7, 90, 14)
 val res2 = appl( p, q ) {a , b -> (a-b)*(a-b) }
 ```
 
+!!! Exercice
+    1. Dans Android Studio, créez l’application TP01. Suivez les instructions données dans ce TP pour créer une application à exécuter sur un terminal.
+    2. ***Hello***
+
+        Pour voir si votre application est correctement générée dans AndroidStudio mettre dans la fonction
+        main() l’affichage de "Hello" et tester si votre programme s’exécute correctement.
+    2. ***classe Point***
+
+        Définir la classe Point qui correspond à un point sur le, plan avec les coordonnées entières x et y.
+        La classe Point sera déclaré comme data class.
+
+    3. ***distance***
+
+        Écrire la fonction distance qui prend comme argument deux points et calcule la distance entre
+        eux. On suppose que la distance entre les point p et q est |p.x − q.x| + |p.y − q.y| (donc c’est un Int)..
+    4. ***classe Rectangle***
+
+        La classe Rectangle représente un rectangle sur le plan dont les sommets ont les coordonnées entières. Un tel rectangle est définie de faço,n unique par deux de ses sommets, le sommet p en bas à gauche et q en haut à droite.
+
+        - Écrire la classe Rectangle avec un constructeur qui prend comme paramètres les points p et q. Les valeurs par défaut pour les deux points sont respectivement (0, 0) et (1, 1).
+        - Redéfinir la méthode toString() de Rectangle pour qu’elle retourne "p=$p q=$q".
+        - Définir dans main() un Array composée de plusieurs rectangles. Pour définir les rectangles utilisez aussi les valeurs par défaut (un rectangles avec p et q par défaut, un rectangle avec la valeur p par défaut et q défini à la création de rectangle, un rectangle avec la valeur q par défaut et p défini à la création de rectangle, etc.)
+        - Dans la classe Rectangle ajouter la méthode surface qui retourne la surface de rectangle.
+        - Dans main afficher la surface de chaque rectangle qui est dans le tableau défini précédemment.
 
