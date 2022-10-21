@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#elements-graphiques-avances-adaptateurs-et-listes" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -227,10 +232,104 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TP2: Éléments Graphiques avancés : RecyclerView
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         TP2: Éléments Graphiques avancés : RecyclerView
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-tp" class="md-nav__link">
+    Objectifs du TP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rappel" class="md-nav__link">
+    Rappel
+  </a>
+  
+    <nav class="md-nav" aria-label="Rappel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptateurs-adapterview" class="md-nav__link">
+    Adaptateurs &amp; AdapterView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice" class="md-nav__link">
+    Exercice
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-objectif" class="md-nav__link">
+    1. Objectif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-spinner" class="md-nav__link">
+    2. Spinner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-recyclerview" class="md-nav__link">
+    3. RecyclerView
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-travail-a-rendre" class="md-nav__link">
+    Exercice 4 : Travail à rendre
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -328,6 +427,84 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-tp" class="md-nav__link">
+    Objectifs du TP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rappel" class="md-nav__link">
+    Rappel
+  </a>
+  
+    <nav class="md-nav" aria-label="Rappel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptateurs-adapterview" class="md-nav__link">
+    Adaptateurs &amp; AdapterView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice" class="md-nav__link">
+    Exercice
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-objectif" class="md-nav__link">
+    1. Objectif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-spinner" class="md-nav__link">
+    2. Spinner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-recyclerview" class="md-nav__link">
+    3. RecyclerView
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-travail-a-rendre" class="md-nav__link">
+    Exercice 4 : Travail à rendre
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -341,9 +518,189 @@
                 
 
 
-  <h1>TP2: Éléments Graphiques avancés : RecyclerView</h1>
-
-<p><img alt="Image title" src="../assets/404.png" /></p>
+<h1 id="elements-graphiques-avances-adaptateurs-et-listes">Éléments graphiques avancés - Adaptateurs et Listes</h1>
+<p><img alt="Screenshot" src="../assets/tp2/androidlist.png" /></p>
+<h2 id="objectifs-du-tp">Objectifs du TP</h2>
+<ul>
+<li>Dans ce TP nous allons appliquer la notion d’adaptateur via des exemples de listes.</li>
+</ul>
+<h2 id="rappel">Rappel</h2>
+<h3 id="adaptateurs-adapterview">Adaptateurs &amp; AdapterView</h3>
+<p>Un objet adaptateur agit comme un pont entre une vue (appelée AdapterView) et les données sous-jacentes de cette vue. Une AdapterView est une vue complexe qui contient plusieurs vues, et qui nécessite un adaptateur pour construire ses vues filles.
+Les AdapterViews les plus connues sont : ListView, GridView et Spinner.
+Un adaptateur permet de transformer les données d’un DataSource (un tableau ou un
+curseur) en widgets pour les insérer dans une AdapterView.</p>
+<p><img alt="Image title" src="../assets/tp2/adapter.png" /></p>
+<p>Les deux types d’adaptateurs les plus communs sont : ArrayAdapter et SimpleCursorAdapter:</p>
+<ol>
+<li><strong><code>ArrayAdapter</code></strong> :</li>
+</ol>
+<p>Utiliser cet adaptateur quand votre source de données est un tableau. Par défaut, cet adaptateur crée une vue pour chaque élément du tableau en appelant la méthode toString de chaque élément, et en plaçant son contenu dans un objet TextView.
+Un adaptateur de type ArrayAdapter est créé comme suit :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">simple_list_item_1</span><span class="p">,</span><span class="n">myStringArray</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+Les arguments du constructeur sont :</p>
+<ul>
+<li>Le contexte de l’application (représente en général l’activité dans laquelle la AdapterView est créée)</li>
+<li>Un layout représentant le type d’un élément de la liste : Ce layout android.R.layout.simple_list_item_1 est un layout prédéfini qui contient un TextView pour chaque élément du tableau</li>
+<li>Le tableau de chaînes de caractères représentant les données à insérer dans la liste.
+L’adaptateur créé sera ensuite associé à la AdapterView correspondante, en utilisant la méthode setAdapter.</li>
+</ul>
+<p>Il est possible de représenter autre chose qu’un TextView pour un élément de la liste.
+Il suffit pour cela d’étendre la classe ArrayAdapter et de surcharger la méthode getView. Un exemple expliquant cela sera représenté plus loin dans l’énoncé.</p>
+<ol>
+<li><strong><code>SimpleCursorAdapter</code></strong> : 
+Utiliser cet adaptateur quand les données sont issues d’un Cursor. Cette interface fournit un accès aléatoire en lecture/écriture au résultat fourni par une requête sur une base de données.
+Nous n’aborderons pas cet adaptateur dans ce document. Pour plus d’informations, consulter la documentation officielle d’Android : <a href="https://developer.android.com/reference/android/widget/SimpleCursorAdapter">ici</a></li>
+</ol>
+<div class="admonition activité-1">
+<p class="admonition-title">Activité-1</p>
+<p>Indiquer les composants graphiques Android qui interviennent dans cette IHM.</p>
+</div>
+<div class="admonition activité-2">
+<p class="admonition-title">Activité-2</p>
+<p>Construire cette IHM avec Android Studio. Lancer l’émulateur, et vérifier que le rendu correspond à ce qui est demandé.</p>
+</div>
+<h3 id="exercice">Exercice</h3>
+<h4 id="1-objectif">1. Objectif</h4>
+<p>L'objectif de ce TP est de réaliser une application simple, qui affiche la présence des étudiants dans plusieurs cours et recherche un étudiant par son nom ou son prénom.
+Le résultat qu’on désire avoir est le suivant :
+<img alt="Image title" height="300" src="../assets/tp2/exer.png" /></p>
+<h4 id="2-spinner">2. Spinner</h4>
+<ul>
+<li>Dans votre layout, insérer un Spinner. Vous trouverez ce widget dans la catégorie Containers de votre palette.</li>
+</ul>
+<p><img alt="Image title" height="200" src="../assets/tp2/spinner.png" /></p>
+<p>On l’appellera spinner. Le code obtenu dans votre layout XML sera comme suit :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    <span class="nt">&lt;Spinner</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="na">android:id=</span><span class="s">&quot;@+id/spinner&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="na">app:layout_constraintLeft_toLeftOf=</span><span class="s">&quot;parent&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="na">app:layout_constraintRight_toRightOf=</span><span class="s">&quot;parent&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&quot;parent&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="nt">&lt;/Spinner&gt;</span>
+</code></pre></div>
+<ul>
+<li>Dans votre activity, déclarer un Spinner. 
+Pour créer un objet qui sera initialisé au premier accès à celui-ci, on peut utiliser la méthode lazy.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">val</span><span class="w"> </span><span class="n">spinner</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Spinner</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">lazy</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">spinner</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Dans la méthode onCreate(), indiquer dans un tableau la liste des matières qui vous seront proposées comme suggestions :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">matieres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Cours&quot;</span><span class="p">,</span><span class="s">&quot;TP&quot;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Associer un adaptateur à ce widget, de type ArrayAdapter. Noter que le layout utilisé comme type pour un élément de la liste est un simple_dropdown_item_1line.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">spinner</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">android</span><span class="p">.</span><span class="na">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">simple_dropdown_item_1line</span><span class="p">,</span><span class="n">matieres</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>Pour gérer les clics sur un élement d'un spinner, on utilise la méthode <strong><em>'onItemSelectedListener'</em></strong>.
+Il faut surchager les méthodes <strong><em>'onItemSelected</em></strong> et <strong><em>'onNothingSelected'</em></strong>. </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w"> </span><span class="n">spinner</span><span class="p">.</span><span class="na">onItemSelectedListener</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AdapterView</span><span class="p">.</span><span class="na">OnItemSelectedListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">            </span><span class="n">override</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">onItemSelected</span><span class="p">(</span><span class="n">adapterView</span><span class="p">:</span><span class="w"> </span><span class="n">AdapterView</span><span class="o">&lt;*&gt;?</span><span class="p">,</span><span class="w"> </span><span class="n">view</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="n">Int</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">Long</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">            </span><span class="n">override</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">onNothingSelected</span><span class="p">(</span><span class="n">adapterView</span><span class="p">:</span><span class="w"> </span><span class="n">AdapterView</span><span class="o">&lt;*&gt;?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+Les paramètres de la méthode onItemSelected sont :</p>
+<ul>
+<li><strong><em>adapterView</em></strong> : L'AdapterView qui contient la vue sur laquelle le clic a été effectué. a été effectué.</li>
+<li><strong><em>view</em></strong> : La vue.( l'item )</li>
+<li><strong><em>i</em></strong> : La position de la vue dans la liste.</li>
+<li><strong><em>id</em></strong> : L'identifiant de la vue.</li>
+</ul>
+<div class="admonition activité-1">
+<p class="admonition-title">Activité-1</p>
+<p>Créer un Spinner. Au clic sur un élément de la liste, afficher un toast.</p>
+</div>
+<h4 id="3-recyclerview">3. RecyclerView</h4>
+<p>Pour afficher des éléments dans un recyclerview, il faut définir : </p>
+<ul>
+<li><strong><em>La source de données</em></strong> à afficher.</li>
+<li><strong><em>Un RecyclerView</em></strong> pour la liste déroulante qui contient les éléments de la liste</li>
+<li><strong><em>La ligne individuelle</em></strong>, dans un fichier xml à part.</li>
+<li><strong><em>Un layoutManager</em></strong> RecyclerView.LayoutManager gère la disposition des éléments de la liste qu'il contient. Cette disposition peut être verticale, horizontale ou une grille.</li>
+<li><strong><em>Un adaptateur</em></strong> RecyclerView.Adapter connecte vos données à RecyclerView. Il prépare les données dans un RecyclerView.ViewHolder.</li>
+<li><strong><em>Un ViewHolder</em></strong> À l'intérieur de votre adaptateur, vous allez créer un ViewHolder qui contient les informations de vue pour afficher un élément  de la liste.</li>
+</ul>
+<p>Le schéma ci-dessous montre la relation entre les données, l'adaptateur, le ViewHolder et le layoutManager.
+<img alt="Image title" height="200" src="../assets/tp2/recycler.png" /></p>
+<div class="admonition activité-2">
+<p class="admonition-title">Activité-2</p>
+</div>
+<ul>
+<li>Ajouter un élément RecyclerView dans le fichier de layout xml au dessous du Spinner.</li>
+<li>Définir une classe Student qui represente un Etudiant defini par son nom, son prénom et son genre.</li>
+<li>Créer un fichier layout XML (student_item.xml) pour un élément de liste, qui contient une image et un Text à droite de l'image.</li>
+<li>Suiver les étapes indiquées dans le cours pour implémenter un adaptateur.</li>
+<li>Choisir des images qui represente une femme et un homme <a href="https://www.flaticon.com/">ici</a>, les télécharger et les placer dans le dossier drawable.</li>
+<li>Faire le changement nécessaire dans la méthode <strong><em>onBindViewHolder</em></strong> pour afficher une image selon le genre de l'etudiant. Pour cela utiliser la méthode <strong><em>setImageResource(R.drawable.nom_de_limage)</em></strong></li>
+<li>Dans votre Activity, connecter toutes les pièces pour afficher vos données.</li>
+<li>Faire les changements nécessaires au niveau du Spinner, pour afficher à chaque fois la liste des étudiants qui concerne une matière précise.</li>
+</ul>
+<p>Pour filtrer la liste, il suffit d'implementer l'interface Filterable, au niveau de votre adaptateur et de surchager la méthode getFilter()</p>
+<ul>
+<li>Ajouter un nouveau tableau dans votre adaptateur comme suit : </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">dataFilterList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">init</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="c1">// associer le tableau des données initiales</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="n">dataFilterList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Implémenter l'interface Filterable et ajouter les lignes de codes suivantes : </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">     </span><span class="n">override</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">getFilter</span><span class="p">():</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Filter</span><span class="p">(){</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">             </span><span class="n">override</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">performFiltering</span><span class="p">(</span><span class="n">constraint</span><span class="p">:</span><span class="w"> </span><span class="n">CharSequence</span><span class="o">?</span><span class="p">):</span><span class="w"> </span><span class="n">FilterResults</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">                 </span><span class="n">val</span><span class="w"> </span><span class="n">charSearch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constraint</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">                 </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">charSearch</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">                     </span><span class="n">dataFilterList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">                 </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">                     </span><span class="n">val</span><span class="w"> </span><span class="n">resultList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                     </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">student</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">student</span><span class="p">.</span><span class="na">firtName</span><span class="p">.</span><span class="na">lowercase</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">ROOT</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">                                 </span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">charSearch</span><span class="p">.</span><span class="na">lowercase</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">ROOT</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">                         </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">                             </span><span class="n">resultList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">student</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">                         </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">                     </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                     </span><span class="n">dataFilterList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resultList</span><span class="w"></span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">                 </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">                 </span><span class="n">val</span><span class="w"> </span><span class="n">filterResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FilterResults</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">                 </span><span class="n">filterResults</span><span class="p">.</span><span class="na">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataFilterList</span><span class="w"></span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">                 </span><span class="k">return</span><span class="w"> </span><span class="n">filterResults</span><span class="w"></span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">             </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">             </span><span class="n">override</span><span class="w"> </span><span class="n">fun</span><span class="w"> </span><span class="nf">publishResults</span><span class="p">(</span><span class="n">constraint</span><span class="p">:</span><span class="w"> </span><span class="n">CharSequence</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="n">results</span><span class="p">:</span><span class="w"> </span><span class="n">FilterResults</span><span class="o">?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">                 </span><span class="n">dataFilterList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">results</span><span class="o">?</span><span class="p">.</span><span class="na">values</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">                 </span><span class="nf">notifyDataSetChanged</span><span class="p">()</span><span class="w"></span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">             </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">         </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition activité-3">
+<p class="admonition-title">Activité-3</p>
+<p>Ajouter un Editext au dessus du RecyclerView et faire le travail necéssaire pour permettre la recherche d'un étudiant par nom.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Utiliser la méthode <strong><em>addTextChangedListener</em></strong> avec l'interface <strong><em> TextWatcher</em></strong> de la même manière utilisée dans le Spinner.</p>
+</div>
+<h3 id="exercice-4-travail-a-rendre">Exercice 4 : Travail à rendre</h3>
+<p>Nous souhaitons que l'application permettera un enseignant de suivre l'état de présence des étudiants. 
+Faire le travail necessaire pour qu'un ensignant peut :</p>
+<ul>
+<li>Voir l'etat de chaque étudiant ( Absent - Présent) ( Pensez à utiliser un checkbox )</li>
+<li>Changer l'etat d'un étudiant </li>
+<li>Filtrer la liste selon l'etat ( Absent - Présent)</li>
+</ul>
 
 
 
